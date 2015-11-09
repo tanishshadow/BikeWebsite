@@ -1,0 +1,23 @@
+﻿@model IEnumerable<BikeWebsite.Models.bikeListModel>
+@{
+    ViewBag.Title = "Touring";
+}
+
+<h2>Touring Bike Model List</h2>
+<h3>Robust, comfortable and capable of carrying heavy loads, these bikes are perfect for road, sport, trail, recumbent or tandem configurations.</h3>
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.ProductModel, "Details/" + item.ProductModelID.ToString())
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.Description)
+            </td>
+        </tr>
+    }
+</table>
+

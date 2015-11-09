@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BikeWebsite.Product>
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Product Details</h2>
+
+<table class="table">
+    <tr>
+        <td><b>@Html.DisplayNameFor(model => model.Name)</b></td>
+        <td><b>@Html.DisplayNameFor(model => model.ProductNumber)</b></td>
+        <td><b>@Html.DisplayNameFor(model => model.Color)</b></td>
+        <td><b>@Html.DisplayNameFor(model => model.ListPrice)</b></td>
+        <td><b>@Html.DisplayNameFor(model => model.Size)</b></td>
+        <td><b>@Html.DisplayNameFor(model => model.Weight)</b></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        var name = item.Name;
+        var prodNum = item.ProductNumber;
+        var colour = item.Color;
+        if (colour == null)
+        {
+            colour = "N/A";
+        }
+        var price = item.ListPrice.ToString("c");
+        var size = item.Size;
+        if (size == null)
+        {
+            size = "N/A";
+        }
+        var weight = item.Weight.ToString();
+        if (weight == null || weight == "")
+        {
+            weight = "N/A";
+        }
+                
+        <tr>
+            <td>@name</td>
+            <td>@prodNum</td>
+            <td>@colour</td>
+            <td>@price</td>
+            @*<td>@Html.DisplayFor(modelItem => item.Size)</td>*@
+            <td>@size</td>
+            <td>@weight</td>
+        </tr>
+    }
+</table>

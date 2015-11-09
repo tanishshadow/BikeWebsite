@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BikeWebsite.Product>
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Product Details</h2>
+
+<table class="table">
+    <tr>
+        <td><b>@Html.DisplayNameFor(model => model.Name)</b></td>
+        <td><b>@Html.DisplayNameFor(model => model.ProductNumber)</b></td>
+        <td><b>@Html.DisplayNameFor(model => model.Color)</b></td>
+        <td><b>@Html.DisplayNameFor(model => model.ListPrice)</b></td>
+        <td><b>@Html.DisplayNameFor(model => model.Size)</b></td>
+        <td><b>@Html.DisplayNameFor(model => model.Weight)</b></td>
+    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.ProductNumber)</td>
+                <td>
+                    @if(item.Color == null){ 
+                        @Html.Raw("N/A")
+                    }
+                    else {
+                        @Html.DisplayFor(modelItem => item.Color)
+                    }
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.ListPrice)</td>
+                <td>
+                    @if (item.Size == null)
+                    {
+                        @Html.Raw("N/A")
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.Size)
+                        @Html.Raw("cm");
+                    }
+                </td>
+                <td>
+                    @if (item.Weight == null)
+                    {
+                        @Html.Raw("N/A")
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.Weight)
+                        @Html.Raw("g");
+                    }
+                </td>
+            </tr>
+        }
+</table>

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<BikeWebsite.ProductCategory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Amazing Bike Shop</h1>
+
+<h2>Browse our bike gear</h2>
+
+<table class="table">
+    <tr>
+        @foreach (var item in Model)
+        {
+            <td>
+                @{
+            String[] name = item.Name.Split(' ');
+                }
+                <a href='@Url.Action(name[0], "Gear")'><img src="@Url.Content("~/Images/"+name[0]+".png")" /></a> <br />
+                @Html.ActionLink(item.Name, name[0])
+            </td>
+        }
+    </tr>
+</table>

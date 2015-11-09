@@ -1,0 +1,18 @@
+﻿@model IEnumerable<BikeWebsite.ProductCategory>
+@{
+    ViewBag.Title = "Components";
+}
+
+<h2>Components</h2>
+
+<table class="table">
+    @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Name, "Details/" + item.ProductCategoryID.ToString())
+            </td>
+        </tr>
+        }
+</table>
+

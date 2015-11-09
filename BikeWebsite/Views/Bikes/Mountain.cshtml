@@ -1,0 +1,23 @@
+﻿@model IEnumerable<BikeWebsite.Models.bikeListModel>
+@{
+    ViewBag.Title = "Mountain";
+}
+
+<h2>Mountain Bike Model List</h2>
+<h3>Conquer any trail, from tame to treacherous with these mountain bikes. Built for the off-road.</h3>
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.ProductModel, "Details/" + item.ProductModelID.ToString())
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.Description)
+            </td>
+        </tr>
+    }
+</table>
+
