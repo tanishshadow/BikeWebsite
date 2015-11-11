@@ -201,7 +201,7 @@
     <Property Name="ProductModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="ProductModelID" Type="Int32" Nullable="false" />
     <Property Name="SellEndDate" Type="DateTime" Precision="3" Nullable="true" />
-    <Property Name="ProductCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="ProductCategoryID" Type="Int32" />
     <Property Name="Culture" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
@@ -453,5 +453,17 @@
       <Parameter Name="ErrorLogID" Mode="InOut" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="uspPrintError" />
+    <EntitySet Name="System_Users" EntityType="DBModel.System_Users" />
   </EntityContainer>
+  <EntityType Name="System_Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RegDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

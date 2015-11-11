@@ -21,10 +21,29 @@
                 </button>
                 @Html.ActionLink("Amazing Bike Shop", "Index", "Bikes", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Bikes", "Index", "Bikes", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Gear", "Index", "Gear", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Bike Manager", "Create", "BikeManager", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Gear", "Index", "Gear", new { area = "" }, new { @class = "navbar-brand" })   
+                @if (Request.IsAuthenticated)
+                {
+                    if (Session["type"].Equals("MANAGER"))
+                    {
+                        @Html.ActionLink("Bike Manager", "Create", "BikeManager", new { area = "" }, new { @class = "navbar-brand" })
+                    }
+                }                 
                 @Html.ActionLink("Contact Us", "ContactUs", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+            <div style="width: auto; background-color: #728ea7;">
+                @if (Request.IsAuthenticated)
+                {
+                    <strong>@Html.Encode(User.Identity.Name)</strong>
+                    @Html.ActionLink("Sign Out", "Logout", "Account")
+                }
+                else
+                {
+                    @Html.ActionLink("Register", "Register", "Account")
+                    <span> | </span>
+                    @Html.ActionLink("Sign In", "Login", "Account")
+                }
+            </div> 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                 </ul>
