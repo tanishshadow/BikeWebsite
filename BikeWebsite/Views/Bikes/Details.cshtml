@@ -5,25 +5,28 @@
 
 <h2>Product Details</h2>
 
-<table class="table">
-    <tr>
-        <td><b>@Html.DisplayNameFor(model => model.Name)</b></td>
-        <td><b>@Html.DisplayNameFor(model => model.ProductNumber)</b></td>
-        <td><b>@Html.DisplayNameFor(model => model.Color)</b></td>
-        <td><b>@Html.DisplayNameFor(model => model.ListPrice)</b></td>
-        <td><b>@Html.DisplayNameFor(model => model.Size)</b></td>
-        <td><b>@Html.DisplayNameFor(model => model.Weight)</b></td>
-    </tr>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <td><b>@Html.DisplayNameFor(model => model.Name)</b></td>
+            <td><b>@Html.DisplayNameFor(model => model.ProductNumber)</b></td>
+            <td><b>@Html.DisplayNameFor(model => model.Color)</b></td>
+            <td><b>@Html.DisplayNameFor(model => model.ListPrice)</b></td>
+            <td><b>@Html.DisplayNameFor(model => model.Size)</b></td>
+            <td><b>@Html.DisplayNameFor(model => model.Weight)</b></td>
+        </tr>
         @foreach (var item in Model)
         {
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.Name)</td>
                 <td>@Html.DisplayFor(modelItem => item.ProductNumber)</td>
                 <td>
-                    @if(item.Color == null){ 
+                    @if (item.Color == null)
+                    {
                         @Html.Raw("N/A")
                     }
-                    else {
+                    else
+                    {
                         @Html.DisplayFor(modelItem => item.Color)
                     }
                 </td>
@@ -52,4 +55,5 @@
                 </td>
             </tr>
         }
-</table>
+    </table>
+</div>

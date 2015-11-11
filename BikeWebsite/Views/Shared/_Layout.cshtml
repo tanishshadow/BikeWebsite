@@ -9,38 +9,79 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <style>
+        * {
+            text-decoration: none;
+            font-family: Calibri;
+            font-weight: 100;
+            -webkit-font-smoothing: subpixel-antialiased;
+            font-size: 18px;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        #slider1_container {
+            transform:translateX(-30px);
+            box-shadow: 2px 2px 8px #7b7b7c;
+        }
+
+        .header {
+            width: 100%;
+            height: 200px;
+        }
+
+        .showcase {
+            width: 100%;
+            height: 210px;
+            box-shadow: 2px 2px 8px #7b7b7c;
+        }
+
+        .header-icon {
+            float: left;
+            padding: 3px;
+            height: 50px;
+        }
+    </style>
+    <link rel="shortcut icon" href="~/Images/Icon.ico">
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Amazing Bike Shop", "Index", "Bikes", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Bikes", "Index", "Bikes", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Gear", "Index", "Gear", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Bike Manager", "Create", "BikeManager", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Contact Us", "ContactUs", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+    <div class="col-xs-12">
+
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Amazing Bike Shop", "Index", "Bikes", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Bikes", "Index", "Bikes")</li>
+                        <li>@Html.ActionLink("Gear", "Index", "Gear")</li>
+                        <li>@Html.ActionLink("Bike Manager", "Create", "BikeManager")</li>
+                        <li>@Html.ActionLink("Contact Us", "ContactUs", "Home")</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="container body-content">
-        <a href='@Url.Action("Index", "Bikes")'><img src="@Url.Content("~/Images/logo.png")"></a>
-        @RenderBody()
-        <hr />
-        <footer>
-            <!--<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>-->
-        </footer>
-    </div>
 
+        <div class="container body-content">
+            <!--
+            <a href='@Url.Action("Index", "Bikes")'><img src="@Url.Content("~/Images/Header.png")"></a>
+            -->
+            @RenderBody()
+            <hr />
+            <footer>
+                <!--<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>-->
+            </footer>
+        </div>
 
+    </div>
 </body>
 </html>

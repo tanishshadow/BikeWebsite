@@ -6,9 +6,25 @@
 
 <h1>Amazing Bike Shop</h1>
 
+@MyHelpers.MakeSlider(Model)
+
 <h2>Browse our bike gear</h2>
 
-<table class="table">
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-xs-12 col-md-4">
+            @{
+                String[] name = item.Name.Split(' ');
+            }
+            <a href='@Url.Action(name[0], "Gear")'><img class="showcase" src="@Url.Content("~/Images/"+name[0]+".png")" /></a> <br />
+            @Html.ActionLink(item.Name, name[0])
+        </div>
+    }
+</div>
+
+@*
+<table class="table table-responsive">
     <tr>
         @foreach (var item in Model)
         {
@@ -22,3 +38,4 @@
         }
     </tr>
 </table>
+*@
