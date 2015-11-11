@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Louis";
+}
+
+<h2>Search Result</h2>
+
+<table class="table">
+    <tr>
+        @foreach (var item in Model)
+        {
+            <td>
+                @{
+            String[] name = item.Name.Split(' ');
+                }
+                <a href='@Url.Action(name[0], "Gear")'><img src="@Url.Content("~/Images/"+name[0]+".png")" /></a> <br />
+                @Html.ActionLink(item.Name, name[0])
+            </td>
+        }
+    </tr>
+</table>
