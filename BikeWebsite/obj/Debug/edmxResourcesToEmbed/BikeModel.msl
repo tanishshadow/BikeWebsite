@@ -231,5 +231,17 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="uspLogError" FunctionName="DBModel.Store.uspLogError" />
     <FunctionImportMapping FunctionImportName="uspPrintError" FunctionName="DBModel.Store.uspPrintError" />
+    <EntitySetMapping Name="System_Users">
+      <EntityTypeMapping TypeName="DBModel.System_Users">
+        <MappingFragment StoreEntitySet="System_Users">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

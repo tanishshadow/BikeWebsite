@@ -155,6 +155,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BikeModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BikeManagerController.cs" />
     <Compile Include="Controllers\BikesController.cs" />
     <Compile Include="Controllers\GearController.cs" />
@@ -192,6 +193,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\bikeListModel.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>BikeModel.tt</DependentUpon>
     </Compile>
@@ -212,6 +214,9 @@
       <DependentUpon>BikeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SalesOrderHeader.cs">
+      <DependentUpon>BikeModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="System_Users.cs">
       <DependentUpon>BikeModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ufnGetAllCategories_Result.cs">
@@ -278,6 +283,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ContactUs.cshtml" />
     <Content Include="Views\Home\Success.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

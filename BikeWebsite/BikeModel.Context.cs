@@ -40,6 +40,7 @@ namespace BikeWebsite
         public virtual DbSet<vGetAllCategory> vGetAllCategories { get; set; }
         public virtual DbSet<vProductAndDescription> vProductAndDescriptions { get; set; }
         public virtual DbSet<vProductModelCatalogDescription> vProductModelCatalogDescriptions { get; set; }
+        public virtual DbSet<System_Users> System_Users { get; set; }
     
         [DbFunction("DBEntities", "ufnGetAllCategories")]
         public virtual IQueryable<ufnGetAllCategories_Result> ufnGetAllCategories()
